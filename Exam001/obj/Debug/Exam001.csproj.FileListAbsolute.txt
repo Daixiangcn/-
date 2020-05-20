@@ -1,0 +1,17 @@
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\bin\Debug\Exam001.exe.config
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\bin\Debug\Exam001.exe
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\bin\Debug\Exam001.pdb
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\bin\Debug\EntityFramework.dll
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\bin\Debug\EntityFramework.SqlServer.dll
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\bin\Debug\EntityFramework.xml
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\bin\Debug\EntityFramework.SqlServer.xml
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.csprojResolveAssemblyReference.cache
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.login.resources
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.main.resources
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.Properties.Resources.resources
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.csproj.GenerateResource.Cache
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.exe
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.pdb
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.add.resources
+F:\C#Project\WindowsFormsProject\Exam001\Exam001\obj\Debug\Exam001.update.resources

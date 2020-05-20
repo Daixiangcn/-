@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SupermarketModelStoreContainer" CdmEntityContainer="SupermarketEntities2">
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="SupermarketModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="prcValiddateUser" FunctionName="SupermarketModel.Store.prcValiddateUser" />
+    <EntitySetMapping Name="goods">
+      <EntityTypeMapping TypeName="SupermarketModel.goods">
+        <MappingFragment StoreEntitySet="goods">
+          <ScalarProperty Name="供应商" ColumnName="供应商" />
+          <ScalarProperty Name="类型" ColumnName="类型" />
+          <ScalarProperty Name="售价" ColumnName="售价" />
+          <ScalarProperty Name="库存量" ColumnName="库存量" />
+          <ScalarProperty Name="单位" ColumnName="单位" />
+          <ScalarProperty Name="入库日期" ColumnName="入库日期" />
+          <ScalarProperty Name="入库单号" ColumnName="入库单号" />
+          <ScalarProperty Name="货物名称" ColumnName="货物名称" />
+          <ScalarProperty Name="货物代码" ColumnName="货物代码" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supplier">
+      <EntityTypeMapping TypeName="SupermarketModel.supplier">
+        <MappingFragment StoreEntitySet="supplier">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="types">
+      <EntityTypeMapping TypeName="SupermarketModel.types">
+        <MappingFragment StoreEntitySet="types">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

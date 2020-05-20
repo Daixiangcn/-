@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SupermarketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="SupermarketEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="user" EntityType="Self.user" />
+    <FunctionImport Name="prcValiddateUser">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="result" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="goods" EntityType="SupermarketModel.goods" />
+    <EntitySet Name="supplier" EntityType="SupermarketModel.supplier" />
+    <EntitySet Name="types" EntityType="SupermarketModel.types" />
+    <AssociationSet Name="gidFor" Association="SupermarketModel.gidFor">
+      <End Role="types" EntitySet="types" />
+      <End Role="goods" EntitySet="goods" />
+    </AssociationSet>
+    <AssociationSet Name="gysFor" Association="SupermarketModel.gysFor">
+      <End Role="supplier" EntitySet="supplier" />
+      <End Role="goods" EntitySet="goods" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="goods">
+    <Key>
+      <PropertyRef Name="货物代码" />
+    </Key>
+    <Property Name="货物代码" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="货物名称" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="入库单号" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="入库日期" Type="DateTime" Precision="0" />
+    <Property Name="单位" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="库存量" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="售价" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="类型" Type="Int32" />
+    <Property Name="供应商" Type="Int32" />
+    <NavigationProperty Name="types" Relationship="SupermarketModel.gidFor" FromRole="goods" ToRole="types" />
+    <NavigationProperty Name="supplier" Relationship="SupermarketModel.gysFor" FromRole="goods" ToRole="supplier" />
+  </EntityType>
+  <EntityType Name="supplier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="goods" Relationship="SupermarketModel.gysFor" FromRole="supplier" ToRole="goods" />
+  </EntityType>
+  <EntityType Name="types">
+    <Key>
+      <PropertyRef Name="gid" />
+    </Key>
+    <Property Name="gid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="goods" Relationship="SupermarketModel.gidFor" FromRole="types" ToRole="goods" />
+  </EntityType>
+  <Association Name="gidFor">
+    <End Type="SupermarketModel.types" Role="types" Multiplicity="0..1" />
+    <End Type="SupermarketModel.goods" Role="goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="types">
+        <PropertyRef Name="gid" />
+      </Principal>
+      <Dependent Role="goods">
+        <PropertyRef Name="类型" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="gysFor">
+    <End Type="SupermarketModel.supplier" Role="supplier" Multiplicity="0..1" />
+    <End Type="SupermarketModel.goods" Role="goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supplier">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="goods">
+        <PropertyRef Name="供应商" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
